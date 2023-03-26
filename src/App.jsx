@@ -16,8 +16,7 @@ const App = () => {
       {posts.map((post, comment) =>
               <li key={post.id}>{post.title}
                 <p>{post.body}</p>
-                <ToggleButton post={post} /> 
-                
+                <ToggleButton post={post} />    
               </li> 
         )}
             
