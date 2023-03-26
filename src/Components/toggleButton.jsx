@@ -9,13 +9,10 @@ export const ToggleButton = ({ post }) => {
     const [comments, setComments] = useState([])
 
     async function handleClick(id) {
-        console.log(id)
         let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
         let userData = await response.json();
         setComments(userData)
         setAtivar((ativar) => !ativar)
-
-       
     }
    
     return(
