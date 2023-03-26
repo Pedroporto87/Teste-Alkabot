@@ -1,26 +1,13 @@
-import { useState, useEffect } from 'react';
-import React from 'react';
-import { ToggleButton } from './Components/toggleButton';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
-  const [posts, setPosts] = useState([])
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(data => setPosts(data))
-    
-  }, [])
-
+ 
   return (
-    <>
-      {posts.map((post, comment) =>
-              <li key={post.id}>{post.title}
-                <p>{post.body}</p>
-                <ToggleButton post={post} />    
-              </li> 
-        )}
-            
-    </>
+    <div>
+      <h1>Teste Alkabot</h1>
+      <Outlet />
+    </div>
   )
     
     

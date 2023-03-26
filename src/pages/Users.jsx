@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import { userToggleButton } from '../Components/userToggleButton';
 
-const App = () => {
+const Users = () => {
   const [users, setUsers] = useState([])
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      {users.map((user, comment) =>
+      {users.map((user) =>
               <li key={user.id}>{user.name}
                 <p>{user.username}</p>
                 <p>{user.email}</p>
@@ -28,4 +28,4 @@ const App = () => {
   
 }
 
-export default App
+export default Users
