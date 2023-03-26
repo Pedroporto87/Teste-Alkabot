@@ -3,31 +3,33 @@ import { useState } from "react";
 
 
 
-export const userToggleButton = ({ user }) => {
+export const UserToggleButton = ({ user }) => {
     
     const [ativar, setAtivar] = useState(false)
     const [details, setDetails] = useState([])
 
     async function handleClick(id) {
-        let response = await fetch(`https://https://jsonplaceholder.typicode.com/users/${id}`)
+        let response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         let userData = await response.json();
         setDetails(userData)
         setAtivar((ativar) => !ativar)
     }
-   
+    const arr = Object.values(details)
+    console.log(arr)
     return(
         <>
         <div>
-            <button id={user.id} onClick={() => handleClick(user.id)}>Comentarios</button>
-            {ativar && details.map((data) => 
-        <li key={data.id}>
+            <button id={user.id} onClick={() => handleClick(user.id)}>Mais informações</button>
+            {ativar && arr.map((key, i) => 
+         <li key={user.id}>
             <p>Endereço</p>
-            <p>{data.street}{data.suite}</p>
-            <p>{data.address.city}</p>
-            <p>{data.address.zipcode}</p>
+            <p>{arr[4].street}{''}{arr[4].suite}</p>
+            <p>{arr[4].city}</p>
+            <p>{arr[4].zipcode}</p>
             <p>Empresa</p>
-            <p>{data.company.name}</p>
-            <p>{data.catchPhrase}</p>
+            <p>{arr[7].name}</p>
+            <p>{arr[7].catchPhrase}</p>
+           
         </li>
     )}
         </div>
