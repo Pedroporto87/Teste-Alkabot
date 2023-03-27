@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/home.scss'
 
 const Home = () => {
 const navigate = useNavigate()
@@ -11,10 +12,12 @@ const handleUsers = () => {
 }
 
   return (
-    <div>
+    <div className='home-div'>
         <h1>Escolha seu caminho!</h1>
-        <button onClick={handlePost}>Posts</button>
-        <button onClick={handleUsers}>Users</button>
+            <div className='home-buttons'>
+                <button onClick={handlePost}>Posts</button>
+                <button onClick={handleUsers}>Usuários</button>
+            </div>
     </div>
   )
 }
