@@ -20,16 +20,14 @@ export const UserToggleButton = ({ user }) => {
         <>
         <div>
             <button id={user.id} onClick={() => handleClick(user.id)}>Mais informações</button>
-            {ativar && arr.map((key, i) => 
-         <li key={user.id}>
-            <p>Endereço</p>
-            <p>{arr[4].street}{''}{arr[4].suite}</p>
-            <p>{arr[4].city}</p>
-            <p>{arr[4].zipcode}</p>
-            <p>Empresa</p>
-            <p>{arr[7].name}</p>
-            <p>{arr[7].catchPhrase}</p>
-           
+            {ativar && arr.map((_key, _i) => 
+         <li key={arr[0]}>
+            <p><span>Endereço:</span> {arr[4].street}{''}<span> </span>{arr[4].suite}</p>
+            <p><span>Cidade:</span> {arr[4].city}</p>
+            <p><span>CEP:</span> {arr[4].zipcode}</p>
+            <p><span>Empresa:</span> {arr[7].name}</p>
+            <p><span>O que faz:</span> {arr[7].catchPhrase}</p>
+            <p>...</p>
         </li>
     )}
         </div>
