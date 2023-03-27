@@ -13,6 +13,7 @@ const Posts = () => {
 
   return (
     <>
+    <h1>Posts</h1>
       {posts.map((post, comment) =>
               <li key={post.id}>{post.title}
                 <p>{post.body}</p>

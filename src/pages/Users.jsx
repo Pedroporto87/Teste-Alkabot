@@ -13,6 +13,7 @@ const Users = () => {
 
   return (
     <>
+    <h1>Usuários</h1>
       {users.map((user) =>
               <li key={user.id}>{user.name}
                 <p>{user.username}</p>
