@@ -18,12 +18,16 @@ export const ToggleButton = ({ post }) => {
     return(
         <>
         <div>
-            <button id={post.id} onClick={() => handleClick(post.id)}>Comentarios</button>
+            <button id={post.id} onClick={() => handleClick(post.id)}>Comentários</button>
             {ativar && comments.map((comment) => 
         <li key={comment.postId}>
-            <h1>{comment.email}</h1>
-            <p>{comment.name}</p>
-            <p>{comment.body}</p>
+            <p><span>E-mail:</span>{comment.email}</p>
+            <p><span>Nome:</span> {comment.name}</p>
+            <p><span>Comentário:</span> {comment.body}</p>
+            <div className="separator">
+                <div className="separator__content">...</div>
+                <div className="separator__separator"></div>
+            </div>
         </li>
     )}
         </div>

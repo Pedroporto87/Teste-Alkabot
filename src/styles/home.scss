@@ -7,6 +7,8 @@
         h1{
             font-family: Arial, Helvetica, sans-serif;
             color: crimson;
+            text-align: center;
+            font-weight: bold;
         }
         .home-buttons{
             width: 9.375rem;
@@ -18,7 +20,7 @@
                 font-family: Arial, Helvetica, sans-serif;
                 color: darkslategray;
                 border-style: solid;
-                border-radius: 7%;
+                border-radius: 2rem;
                 border-width: .0625rem;
                 cursor: pointer;
                 &:hover{
