@@ -3,33 +3,30 @@ import { useState } from "react";
 
 
 
+
 export const UserToggleButton = ({ user }) => {
     
     const [ativar, setAtivar] = useState(false)
-    const [details, setDetails] = useState([])
 
-    async function handleClick(id) {
-        let response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-        let userData = await response.json();
-        setDetails(userData)
+ function handleClick() {
+
         setAtivar((ativar) => !ativar)
-    }
-    const arr = Object.values(details)
-    console.log(arr)
+    };
+   
     return(
         <>
         <div>
-            <button id={user.id} onClick={() => handleClick(user.id)}>Mais informações</button>
-            {ativar && arr.map((_key, _i) => 
-         <li key={arr[0]}>
-            <p><span>Endereço:</span> {arr[4].street}{''}<span> </span>{arr[4].suite}</p>
-            <p><span>Cidade:</span> {arr[4].city}</p>
-            <p><span>CEP:</span> {arr[4].zipcode}</p>
-            <p><span>Empresa:</span> {arr[7].name}</p>
-            <p><span>O que faz:</span> {arr[7].catchPhrase}</p>
+            <button id={user.id} onClick={() => handleClick()}>Mais informações</button>
+            {ativar &&  
+         <li key={user.id}>
+            <p><span>Endereço:</span> {user.address.street}<span> </span>{user.address.suite}</p>
+            <p><span>Cidade:</span> {user.address.city}</p>
+            <p><span>CEP:</span> {user.address.zipcode}</p>
+            <p><span>Empresa:</span> {user.company.name}</p>
+            <p><span>O que faz:</span> {user.company.catchPhrase}</p>
             <p>...</p>
-        </li>
-    )}
+        </li>}
+    
         </div>
         </>
     )

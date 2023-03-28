@@ -24,10 +24,7 @@ export const ToggleButton = ({ post }) => {
             <p><span>E-mail:</span>{comment.email}</p>
             <p><span>Nome:</span> {comment.name}</p>
             <p><span>Comentário:</span> {comment.body}</p>
-            <div className="separator">
-                <div className="separator__content">...</div>
-                <div className="separator__separator"></div>
-            </div>
+            <p>...</p>
         </li>
     )}
         </div>
